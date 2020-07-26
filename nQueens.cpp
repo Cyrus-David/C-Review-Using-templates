@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <cstdlib>
 /* 
   This program solves wether placing N queens in a N x N chessboard is valid withouth them attacking eachother.
 */
@@ -12,7 +11,7 @@ using namespace std;
 bool corPat(vector<int> perm) {
   int n = perm.size() - 1;
   for (int i = 0; i < n; i ++) {
-    if ( (n - i) == abs(perm[n] - perm[i])){ //this checks if the pieces are not in the same 
+    if ( (n - i) == std::abs(perm[n] - perm[i])){ //this checks if the pieces are not in the same 
       return false;                           //diagonal
     }
   }
@@ -20,6 +19,7 @@ bool corPat(vector<int> perm) {
 }
 
 //This creates permutations
+bool flag = false;
 void permMaker(vector<int> perm, int n) {
   if (n == perm.size()) {
     for (int i = 0; i < n; i++) {
@@ -29,6 +29,7 @@ void permMaker(vector<int> perm, int n) {
       else
         cout << endl;
     }
+    flag = true;
   } else {
     for (int i = 0; i < n; i++) {
       if (!(find(perm.begin(), perm.end(), i) != perm.end())) { //check wether i is not present in
@@ -37,7 +38,8 @@ void permMaker(vector<int> perm, int n) {
         if (corPat(perm)){
           permMaker(perm,n);
         }
-        
+        if(flag == true)
+          return;
         perm.pop_back();
       }
     }
@@ -55,5 +57,6 @@ int main(){
     vector<int> perm;
     cin >> n;
     permMaker(perm,n);
+    flag = false;
   }
 }
