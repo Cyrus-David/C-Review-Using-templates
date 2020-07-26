@@ -31,7 +31,7 @@ void permMaker(vector<int> perm, int n) {
     }
   } else {
     for (int i = 0; i < n; i++) {
-      if (!(find(perm.begin(), perm.end(), i) != perm.end())) { //check wether i is present in
+      if (!(find(perm.begin(), perm.end(), i) != perm.end())) { //check wether i is not present in
         perm.push_back(i);                                        //the vector
         
         if (corPat(perm)){
