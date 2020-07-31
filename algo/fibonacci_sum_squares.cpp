@@ -1,6 +1,7 @@
 #include <iostream>
 
 int fibonacci_sum_squares_fast(long long n) {
+    n %= 60;
     if (n <= 1)
         return n;
 
