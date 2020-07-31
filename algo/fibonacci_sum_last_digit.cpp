@@ -19,6 +19,7 @@ int fibonacci_sum_naive(long long n) {
 }
 
 int fibonacci_sum_fast(long long n) {
+    n %= 60;
     if (n <= 1)
         return n;
 
