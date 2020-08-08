@@ -19,7 +19,7 @@ bool corPat(vector<int> perm) {
 }
 
 //This creates permutations
-bool flag = false;
+bool flag = false; // for single output
 void permMaker(vector<int> perm, int n) {
   if (n == perm.size()) {
     for (int i = 0; i < n; i++) {
