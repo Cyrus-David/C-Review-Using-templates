@@ -3,7 +3,7 @@
 using namespace std;
 
 bool checker(int a[], int i, int type) {
-	 if (i > 24)
+    if (i > 24)
         return false;
     if (type == 1) {
         if ((i % 5) != 0 && i - 6 >= 0 && a[i - 6] == 1)
@@ -26,17 +26,17 @@ bool checker(int a[], int i, int type) {
 
 void print(int* arr, int size) {
 	for(int i = 0; i < size; i++) {
-		cout << arr[i] << " ";
-		if ( i %  5 == 4)
-			cout << "\n";
+	   cout << arr[i] << " ";
+	   if ( i %  5 == 4)
+               cout << "\n";
 	}
 	cout << "\n\n";
 }
 
 void solve(int arr[], int i, int diags) {
-	if (diags == 16){
-		print(arr, 25);
-	}
+    if (diags == 16){
+	print(arr, 25);
+    }
    
     if(i == 25)
         return;
@@ -56,6 +56,6 @@ int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0); cout.tie(0);
 	
-    int arr[25]{0};
+        int arr[25]{0};
 	solve(arr, 0, 0);
 }
