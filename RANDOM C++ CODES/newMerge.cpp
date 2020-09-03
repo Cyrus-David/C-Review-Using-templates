@@ -37,7 +37,7 @@ void solve(int* arr, int start, int end) {
 }
 
 void merge(int* arr, int start1, int end1, int start2, int end2) {
-	int* temp = new int[start1+end2]; // get the temp size
+	int* temp = new int[end2 - start1]; // get the temp size
 	int j = start1, k = start2; //initialize variables for indexing
 	
 	//storing the sorted values in the temp array	
