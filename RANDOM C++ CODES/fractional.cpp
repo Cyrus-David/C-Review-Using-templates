@@ -4,10 +4,10 @@ using namespace std;
 
 class Items{
 	int size;
-	public:
-		double value[100];
-		double weight[100];
+	double value[100];
+	double weight[100];
 
+	public:
 		Items(int);
 		void getdata();
 		double* fractional();
